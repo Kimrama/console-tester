@@ -25,6 +25,12 @@ class Program :
         self.json_file = "test_set.json"
 
         self.score = 0
+        if hasattr(sys, '_MEIPASS'):
+            self.base_dir = os.path.dirname(sys.executable)
+        else:
+            self.base_dir = os.path.dirname(os.path.abspath(__file__))
+
+        self.json_file = os.path.join(self.base_dir, 'test_set.json')
     
     def handle_keyboard_event(self, event):
         if self.page == "Home" :
@@ -109,11 +115,14 @@ class Program :
         console.print("ENTER (↵) // BACKSPACE (←) // ARROW UP (↑) // ARROW DOWN (↓)")
         
 
-    def get_sample_program(self) :
-        current_folder = os.path.dirname(os.path.abspath(__file__))
-        self.file_ls = [file for file in os.listdir(current_folder) \
-                        if os.path.isfile(os.path.join(current_folder, file)) and file != os.path.basename(__file__) and file.endswith(".py")]
-
+    def get_sample_program(self):
+        current_folder = self.base_dir
+        self.file_ls = [
+            file for file in os.listdir(current_folder)
+            if os.path.isfile(os.path.join(current_folder, file))  
+            and file != os.path.basename(sys.executable)
+            and file.endswith(".py")  
+    ]
     def render_file(self) :
         console.print(f"[bold yellow] #SELECT FILE TO TEST[/bold yellow]")
         console.print(f"[bold white]-----------------------------------------[/bold white]")
