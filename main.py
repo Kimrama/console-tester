@@ -61,10 +61,14 @@ class Program :
                 self.set_idx -= 1
             if event.name == "down" and self.set_idx < len(self.set_ls) - 1:
                 self.set_idx += 1
-            if event.name == "backspace" :
-                self.page = "File"
 
-            if event.name == "enter" :
+            if event.name == "backspace" :
+                if self.file_seleted :
+                    self.page = "File"
+                else :
+                    self.page = "Home"
+                
+            if event.name == "enter" and self.file_seleted :
                 self.set_seleted = self.set_ls[self.set_idx]
                 self.score = 0
                 self.page = "Test"
@@ -108,7 +112,7 @@ class Program :
     def get_sample_program(self) :
         current_folder = os.path.dirname(os.path.abspath(__file__))
         self.file_ls = [file for file in os.listdir(current_folder) \
-                        if os.path.isfile(os.path.join(current_folder, file)) and file != os.path.basename(__file__)]
+                        if os.path.isfile(os.path.join(current_folder, file)) and file != os.path.basename(__file__) and file.endswith(".py")]
 
     def render_file(self) :
         console.print(f"[bold yellow] #SELECT FILE TO TEST[/bold yellow]")
