@@ -39,8 +39,8 @@ class Program :
         self.set_seleted = None
 
         self.file_ls = []
-        self.menu_ls = ["TEST", "TEST SET", "ABOUT"]
-        self.menu_describe_ls = ["let select file to test", "just see how many test set", "about this program"]
+        self.menu_ls = ["TEST", "TEST SET", "CONTRIBUTORS"]
+        self.menu_describe_ls = ["Select .py file to test", "Display how many testset available", ""]
         self.set_ls = []
 
         self.json_file = "test_set.json"
@@ -220,34 +220,42 @@ class Program :
         ║         Kimrama  | tawan123456789 | OkuSan | Archer-SN            ║
         ║                                                                   ║
         ╚═══════════════════════════════════════════════════════════════════╝
+          
           Selected File:       {user_file}  
                                
           TestName:            {self.set_seleted["setname"]}     
           Description:         {self.set_seleted["describe"]}    
           Number of Testcases: {str(number_of_testcase)}
           
-        ╚═══════════════════════════════════════════════════════════════════╝         
+               
         """
 
-
         print(TEST_BANNER)    
+        
         for i, testcase in enumerate(self.set_seleted["testcase"]):
+            try:
                 answer = self.execute_python(testcase["input"]).replace("\n", "")
+            except UnicodeDecodeError:
+                console.print(f"[bold red]Error[/bold red]: UnicodeDecodeError occurred during execution. Please remove non-ASCII characters if any.")
+                print("Press any key to go to MENU")
+                return
+            except Exception as e:
+                print(f"Error: {e}")
                 
-                if answer == testcase["expected_output"]:
-                    console.print(f"[bold yellow]TESTCASE {i + 1} of {number_of_testcase}[/bold yellow]\t\t[bold green] PASS[/bold green]")
-                    self.score = self.score + 1
-                else : 
-                    console.print(f"[bold yellow]TESTCASE {i + 1} of {number_of_testcase}[/bold yellow]\t\t[bold red] FAIL[/bold red]")
-                
-                print("TESTCASE Input: ", testcase["input"])
-                print("EXPECTED Output: ", testcase["expected_output"])
-                print("Your answer: ", answer, end="")
-                
-                print()
-                
-                print("-------------------------------------------")
-                time.sleep(0.3)
+            if answer == testcase["expected_output"]:
+                console.print(f"[bold yellow]TESTCASE {i + 1} of {number_of_testcase}[/bold yellow]\t\t[bold green] PASS[/bold green]")
+                self.score = self.score + 1
+            else : 
+                console.print(f"[bold yellow]TESTCASE {i + 1} of {number_of_testcase}[/bold yellow]\t\t[bold red] FAIL[/bold red]")
+            
+            print("TESTCASE Input: ", testcase["input"])
+            print("EXPECTED Output: ", testcase["expected_output"])
+            print("Your answer: ", answer, end="")
+            
+            print()
+            
+            print("-------------------------------------------")
+            time.sleep(0.3)
 
         console.print("[bold green]TEST FINISHED[/bold green]")
         print(f'Score: {self.score}/{number_of_testcase}')
@@ -263,7 +271,6 @@ class Program :
         console.print("BACKSPACE (←) // ESC (x)")
 
     def run(self) :
-
         self.render()
         keyboard.on_press(self.handle_keyboard_event)
 
@@ -308,8 +315,9 @@ else:
                     break
             else:
                 print(f"Error: Test set '{user_file_name}' not found.")
-                print("Running the program normally...")
+                print("Please manually select the test set.")
                 time.sleep(2)
+                program.page = "Set"
                 run_normal()
             
     except FileNotFoundError:
