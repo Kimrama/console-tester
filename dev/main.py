@@ -208,7 +208,7 @@ class Program :
         console.print("[bold yellow] #About[/bold yellow]")
         console.print("[bold white] Kimrama [/bold white]", "[bold cyan] EDITER [/bold cyan]", "https://github.com/Kimrama")
         console.print("[bold white] tawan123456789 [/bold white]", "[bold cyan] EDITER [/bold cyan]", "https://github.com/tawan123456789")
-        console.print("[bold white] Kaka [/bold white]", "[bold spring_green2] TESTER [/bold spring_green2]", "")
+        console.print("[bold white] Kaka [/bold white]", "[bold spring_green2] TESTER [/bold spring_green2]", "https://github.com/Archer-SN")
         console.print("BACKSPACE (←) // ESC (x)")
 
     def run(self) :
