@@ -219,10 +219,49 @@ class Program :
 console = Console()
 program = Program()
 
-program.run()
+def run_normal():
+    program.run()
+    try :
+        keyboard.wait("esc")
+    except KeyboardInterrupt:
+        print("Ctrl + C detected. Exiting...")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
-try :
-    keyboard.wait("esc")
-except :
-    print("Program close")
+# User run the program directly without any .py file
+# Proceed the program as normal 
+if len(sys.argv) == 1:
+    run_normal()
 
+elif len(sys.argv) > 2:
+    print("Error: Too many arguments.")
+    exit(1)
+    
+else:
+    user_file_path = sys.argv[1]
+    if not os.path.isfile(user_file_path) or not user_file_path.endswith(".py"):
+        print("Error: Provided path is not a valid .py file.")
+        exit(1)
+
+    user_file_name = os.path.basename(user_file_path)
+    program.file_seleted = user_file_name
+    user_file_name = user_file_name.replace(".py", "")  # Remove .py extension
+    
+    try:
+        with open(program.json_file, 'r', encoding="utf-8") as file:
+            program.set_ls = json.load(file)
+            for test_set in program.set_ls:
+                if test_set["setname"] == user_file_name:
+                    program.set_seleted = test_set
+                    program.start_test()
+                    break
+            else:
+                print(f"Error: Test set '{user_file_name}' not found.")
+                print("Running the program normally...")
+                time.sleep(2)
+                run_normal()
+            
+    except FileNotFoundError:
+        print("Error: Testset file (test_set.json) not found.")
+
+input("Press Enter to exit...")
