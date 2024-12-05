@@ -255,10 +255,11 @@ class Program :
 
     @staticmethod
     def show_about() :
-        console.print("[bold yellow] #About[/bold yellow]")
-        console.print("[bold white] Kimrama [/bold white]", "[bold cyan] EDITER [/bold cyan]", "https://github.com/Kimrama")
-        console.print("[bold white] tawan123456789 [/bold white]", "[bold cyan] EDITER [/bold cyan]", "https://github.com/tawan123456789")
-        console.print("[bold white] Kaka [/bold white]", "[bold spring_green2] TESTER [/bold spring_green2]", "https://github.com/Archer-SN")
+        console.print("[bold yellow] # Contributors[/bold yellow]")
+        console.print(f"[bold white] {"Kimrama":<15} [/bold white]\t[bold cyan] EDITOR [/bold cyan]\thttps://github.com/Kimrama")
+        console.print(f"[bold white] {"tawan123456789":<15} [/bold white]\t[bold cyan] EDITOR [/bold cyan]\thttps://github.com/tawan123456789")
+        console.print(f"[bold white] {"OkuSan":<15} [/bold white]\t[bold cyan] EDITOR [/bold cyan]\thttps://github.com/paratpanu18")
+        console.print(f"[bold white] {"KaKa":<15} [/bold white]\t[bold cyan] TESTER [/bold cyan]\thttps://github.com/Archer-SN")
         console.print("BACKSPACE (←) // ESC (x)")
 
     def run(self) :
