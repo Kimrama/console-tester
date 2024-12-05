@@ -9,6 +9,12 @@ root(working folder)
 ┗ test_set.json
 ```
 
+## Drag and Drop Function
+You can simply drag the Python source file `.py` with same set_name provided in `test_set.json` on to the executable `.exe` to automatically test that script.
+<center>
+  <img src="./docs/media/drag_n_drop.gif" alt="" style="width:50%;"/>
+</center>
+
 ### About test_set.json
 test_set.json use to store test set data in array of json
 ```json
