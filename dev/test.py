@@ -7,6 +7,18 @@ from io import StringIO
 from rich.console import Console
 import keyboard
 
+BANNER = r"""
+╔═══════════════════════════════════════════════════════════════════╗
+║     ____                      _     _____         _               ║
+║    / ___|___  _ __  ___  ___ | | __|_   _|__  ___| |_ ___ _ __    ║
+║   | |   / _ \| '_ \/ __|/ _ \| |/ _ \| |/ _ \/ __| __/ _ \ '__|   ║
+║   | |__| (_) | | | \__ \ (_) | |  __/| |  __/\__ \ ||  __/ |      ║
+║    \____\___/|_| |_|___/\___/|_|\___||_|\___||___/\__\___|_|      ║
+║                                                                   ║
+║         Kimrama  | tawan123456789 | OkuSan | Archer-SN            ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+"""
 
 class Program :
     def __init__(self) :
@@ -108,14 +120,18 @@ class Program :
     def render(self) :
         os.system("cls")
         if self.page == "Home" :
+            print(BANNER)
             self.render_menu()
         elif self.page == "File" :
+            print(BANNER)
             self.render_file()
         elif self.page == "Set" :
+            print(BANNER)
             self.render_set()
         elif self.page == "Test" :
             self.start_test()
         elif self.page == "About" :
+            print(BANNER)
             self.show_about()
     
     def render_menu(self) :
@@ -188,20 +204,54 @@ class Program :
             return captured_output
     
     def start_test(self):
-        for testcase in self.set_seleted["testcase"]:
+        
+        user_file = self.file_seleted
+        number_of_testcase = len(self.set_seleted["testcase"])
+        
+        
+        TEST_BANNER = rf"""
+        ╔═══════════════════════════════════════════════════════════════════╗
+        ║     ____                      _     _____         _               ║
+        ║    / ___|___  _ __  ___  ___ | | __|_   _|__  ___| |_ ___ _ __    ║
+        ║   | |   / _ \| '_ \/ __|/ _ \| |/ _ \| |/ _ \/ __| __/ _ \ '__|   ║
+        ║   | |__| (_) | | | \__ \ (_) | |  __/| |  __/\__ \ ||  __/ |      ║
+        ║    \____\___/|_| |_|___/\___/|_|\___||_|\___||___/\__\___|_|      ║
+        ║                                                                   ║
+        ║         Kimrama  | tawan123456789 | OkuSan | Archer-SN            ║
+        ║                                                                   ║
+        ╚═══════════════════════════════════════════════════════════════════╝
+          Selected File:       {user_file}  
+                               
+          TestName:            {self.set_seleted["setname"]}     
+          Description:         {self.set_seleted["describe"]}    
+          Number of Testcases: {str(number_of_testcase)}
+          
+        ╚═══════════════════════════════════════════════════════════════════╝         
+        """
+
+
+        print(TEST_BANNER)    
+        for i, testcase in enumerate(self.set_seleted["testcase"]):
                 answer = self.execute_python(testcase["input"]).replace("\n", "")
-                print("testcase input:", testcase["input"])
-                print("expect output:", testcase["expected_output"])
-                print("your answer:", answer, end="")
+                
                 if answer == testcase["expected_output"]:
-                    console.print("[bold green] PASS[/bold green]")
+                    console.print(f"[bold yellow]TESTCASE {i + 1} of {number_of_testcase}[/bold yellow]\t\t[bold green] PASS[/bold green]")
                     self.score = self.score + 1
-                else : console.print("[bold red] FAIL[/bold red]")
+                else : 
+                    console.print(f"[bold yellow]TESTCASE {i + 1} of {number_of_testcase}[/bold yellow]\t\t[bold red] FAIL[/bold red]")
+                
+                print("TESTCASE Input: ", testcase["input"])
+                print("EXPECTED Output: ", testcase["expected_output"])
+                print("Your answer: ", answer, end="")
+                
+                print()
+                
                 print("-------------------------------------------")
                 time.sleep(0.3)
 
-        print("total", self.score)
-        print("press any key to go to MENU")
+        console.print("[bold green]TEST FINISHED[/bold green]")
+        print(f'Score: {self.score}/{number_of_testcase}')
+        print("Press any key to go to MENU")
 
     @staticmethod
     def show_about() :
