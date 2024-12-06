@@ -12,7 +12,14 @@ You have to put **test.exe** and **test_set.json** at the same directory with fi
 ```
 
 ## Run in VSCode
-
+You have to install `run` extension in VSCode
+<p align="center">
+  <img src="./docs/media/run.png" alt="" style="width:70%;"/>
+</p>
+and open console-tester.exe in file explorer
+<p align="center">
+  <img src="./docs/media/run_in_vscode.gif" alt="" style="width:70%;"/>
+</p>
 
 ## Drag and Drop Function
 You can simply drag the Python source file `.py` with same set_name provided in `test_set.json` on to the executable `.exe` to automatically test that script.
