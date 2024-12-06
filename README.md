@@ -14,7 +14,7 @@ You have to put **test.exe** and **test_set.json** at the same directory with fi
 ## Drag and Drop Function
 You can simply drag the Python source file `.py` with same set_name provided in `test_set.json` on to the executable `.exe` to automatically test that script.
 
-<p style="background-color: orange;">Note that it is important to set setname in test_set.json to be the same name with file.py which you want to test</p>
+**Note that it is important to set setname in test_set.json to be the same name with file.py which you want to test**
 <p align="center">
   <img src="./docs/media/drag_n_drop.gif" alt="" style="width:70%;"/>
 </p>
