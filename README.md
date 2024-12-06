@@ -15,7 +15,7 @@ You have to put **test.exe** and **test_set.json** at the same directory with fi
 You have to install `run extension` in VSCode
 
 <p align="center">
-  <img src="./docs/media/run.png" alt="" style="width:70%;"/>
+  <img src="./docs/media/run.png" alt="" style="width:90%;"/>
 </p>
 
 open `console-tester.exe` in file explorer
@@ -29,7 +29,7 @@ You can simply drag the Python source file `.py` with same set_name provided in 
 
 **Note that it is important to set setname in test_set.json to be the same name with file.py which you want to test**
 <p align="center">
-  <img src="./docs/media/drag_n_drop.gif" alt="" style="width:70%;"/>
+  <img src="./docs/media/drag_n_drop.gif" alt="" style="width:90%;"/>
 </p>
 
 # About test_set.json
