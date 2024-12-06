@@ -1,16 +1,25 @@
 # To use this program
 You have to put **test.exe** and **test_set.json** at the same directory with files which you want to test
 ```
-root(working folder)
-┣ q1.py
-┣ q2.py
-┣ ....py
-┣ test.exe
-┗ test_set.json
+. Root (Working Directory)
+├── q1_1.py
+├── q1_2.py
+├── q1_3.py
+├── ... .py
+├── console-tester.exe
+└── test_set.json
+
 ```
 
+## Drag and Drop Function
+You can simply drag the Python source file `.py` with same set_name provided in `test_set.json` on to the executable `.exe` to automatically test that script.
+
+<p align="center">
+  <img src="./docs/media/drag_n_drop.gif" alt="" style="width:70%;"/>
+</p>
+
 ### About test_set.json
-test_set.json use to store test set data in array of json
+`test_set.json` use to store test set data in array of json
 ```json
 [
   {
