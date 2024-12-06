@@ -21,7 +21,7 @@ You have to install `run extension` in VSCode
 open `console-tester.exe` in file explorer
 
 <p align="center">
-  <img src="./docs/media/run_in_vscode.gif" alt="" style="width:70%;"/>
+  <img src="./docs/media/run_in_vscode.gif" alt="" style="width:90%;"/>
 </p>
 
 ## Drag and Drop Function
