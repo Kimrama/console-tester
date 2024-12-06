@@ -25,3 +25,10 @@ install dependency
 ```bash
     pip install -r requirements
 ```
+
+# Build the project
+
+On PowerShell:
+```bash
+./BuildScript.ps1
+```
