@@ -12,14 +12,14 @@ You have to put **test.exe** and **test_set.json** at the same directory with fi
 ```
 
 ## Run in VSCode
-# You have to 
+### You have to 
 install `run extension` in VSCode
 
 <p align="center">
   <img src="./docs/media/run.png" alt="" style="width:70%;"/>
 </p>
 
-# open 
+### open 
 `console-tester.exe` in file explorer
 
 <p align="center">
