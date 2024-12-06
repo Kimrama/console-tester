@@ -8,13 +8,13 @@ first you have to create virtual environment
 
 use virtual environment
 
- **windows
+ **windows**
 
 ```bash
     .\.venv\Scripts\activate
 ```
 
-**macOS/Linux
+**macOS/Linux**
 
 ```bash
     source ./.venv/bin/activate
