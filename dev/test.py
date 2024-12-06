@@ -18,7 +18,10 @@ BANNER = r"""
 ║         Kimrama  | tawan123456789 | OkuSan | Archer-SN            ║
 ║                                                                   ║
 ╚═══════════════════════════════════════════════════════════════════╝
+
+
 """
+
 
 class Program :
     def __init__(self) :
