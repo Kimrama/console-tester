@@ -11,6 +11,9 @@ You have to put **test.exe** and **test_set.json** at the same directory with fi
 
 ```
 
+## Run in VSCode
+
+
 ## Drag and Drop Function
 You can simply drag the Python source file `.py` with same set_name provided in `test_set.json` on to the executable `.exe` to automatically test that script.
 
@@ -19,7 +22,7 @@ You can simply drag the Python source file `.py` with same set_name provided in 
   <img src="./docs/media/drag_n_drop.gif" alt="" style="width:70%;"/>
 </p>
 
-### About test_set.json
+# About test_set.json
 `test_set.json` use to store test set data in array of json
 ```json
 [
