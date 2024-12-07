@@ -1,7 +1,141 @@
 [
     {
-        "setname": "test5",
-        "describe": "to min",
+        "setname": "test1_1",
+        "describe": "สำหรับข้อ 1 จาก testcase อาจารย์",
+        "testcase": [
+            {
+                "input": "1",
+                "expected_output": "1234"
+            },
+            {
+                "input": "2",
+                "expected_output": "2468"
+            },
+            {
+                "input": "3",
+                "expected_output": "3702"
+            },
+            {
+                "input": "5",
+                "expected_output": "6170"
+            },
+            {
+                "input": "7",
+                "expected_output": "8638"
+            },
+            {
+                "input": "0",
+                "expected_output": "0"
+            },
+            {
+                "input": "-1",
+                "expected_output": "Invalid"
+            },
+            {
+                "input": "10",
+                "expected_output": "Invalid"
+            }
+        ]
+    },
+    {
+        "setname": "test1_2",
+        "describe": "สำหรับข้อ 2 จาก testcase อาจารย์",
+        "testcase": [
+            {
+                "input": "3",
+                "expected_output": "906609"
+            },
+            {
+                "input": "2",
+                "expected_output": "9009"
+            },
+            {
+                "input": "0",
+                "expected_output": "Invalid"
+            },
+            {
+                "input": "1",
+                "expected_output": "Invalid"
+            },
+            {
+                "input": "-3",
+                "expected_output": "Invalid"
+            },
+            {
+                "input": "a",
+                "expected_output": "Invalid"
+            }
+        ]
+    },
+    {
+        "setname": "test1_3",
+        "describe": "สำหรับข้อ 3 จาก testcase อาจารย์",
+        "testcase": [
+            {
+                "input": "7 0 7 15",
+                "expected_output": "0"
+            },
+            {
+                "input": "7 0 8 0",
+                "expected_output": "10"
+            },
+            {
+                "input": "7 0 10 0",
+                "expected_output": "30"
+            },
+            {
+                "input": "7 0 12 0",
+                "expected_output": "70"
+            },
+            {
+                "input": "7 0 14 0",
+                "expected_output": "200"
+            },
+            {
+                "input": "10 30 13 15",
+                "expected_output": "30"
+            },
+            {
+                "input": "9 0 9 16",
+                "expected_output": "10"
+            },
+            {
+                "input": "15 0 19 0",
+                "expected_output": "50"
+            },
+            {
+                "input": "22 45 23 0",
+                "expected_output": "0"
+            },
+            {
+                "input": "7 30 23 0",
+                "expected_output": "200"
+            },
+            {
+                "input": "23 0 7 0",
+                "expected_output": "Invalid"
+            },
+            {
+                "input": "7 0 24 0",
+                "expected_output": "Invalid"
+            },
+            {
+                "input": "-1 0 10 0",
+                "expected_output": "Invalid"
+            },
+            {
+                "input": "7 0 8 -15",
+                "expected_output": "Invalid"
+            },
+            {
+                "input": "7 60 8 0",
+                "expected_output": "Invalid"
+            }
+        ]
+    },
+    {
+        "setname": "test1_5",
+        "describe": "สำหรับข้อ 5 จาก testcase อาจารย์",
         "testcase": [
             {
                 "input": "9 4 6 2",
@@ -37,6 +171,44 @@
             },
             {
                 "input": "-1 2 3",
+                "expected_output": "Invalid"
+            }
+        ]
+    },
+    {
+        "setname": "test1_6",
+        "describe": "สำหรับข้อ 6 จาก testcase อาจารย์",
+        "testcase": [
+            {
+                "input": "[1, 2, 3]",
+                "expected_output": "6"
+            },
+            {
+                "input": "[0, 1, 2]",
+                "expected_output": "2"
+            },
+            {
+                "input": "[-1, 1, -1]",
+                "expected_output": "1"
+            },
+            {
+                "input": "[100, -10, 1]",
+                "expected_output": "100"
+            },
+            {
+                "input": "[1, 2, 3, 4, 5]",
+                "expected_output": "20"
+            },
+            {
+                "input": "[-1, -2, -3, -4, -5]",
+                "expected_output": "20"
+            },
+            {
+                "input": "[0, 0, 0, 0]",
+                "expected_output": "Invalid"
+            },
+            {
+                "input": "[1]",
                 "expected_output": "Invalid"
             }
         ]
