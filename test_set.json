@@ -1,214 +1,108 @@
 [
     {
-        "setname": "test1_1",
-        "describe": "สำหรับข้อ 1 จาก testcase อาจารย์",
+        "setname": "test3_lab2",
+        "describe": "item 3 lab 2",
         "testcase": [
             {
-                "input": "1",
-                "expected_output": "1234"
+                "input": "{} | 'python' | 50",
+                "expected_output": "{'python': 50}, Average score: 50.00"
             },
             {
-                "input": "2",
-                "expected_output": "2468"
+                "input": "{'python': 50} | 'calculus' | 60",
+                "expected_output": "{'python': 50, 'calculus': 60}, Average score: 55.00"
             },
             {
-                "input": "3",
-                "expected_output": "3702"
+                "input": "{'math': 80, 'science': 70} | 'english' | 90",
+                "expected_output": "{'math': 80, 'science': 70, 'english': 90}, Average score: 80.00"
             },
             {
-                "input": "5",
-                "expected_output": "6170"
+                "input": "{} | 'physics' | -10",
+                "expected_output": "{}, Average score: 0.00"
             },
             {
-                "input": "7",
-                "expected_output": "8638"
+                "input": "{'history': 65} | 'history' | 75",
+                "expected_output": "{'history': 75}, Average score: 75.00"
             },
             {
-                "input": "0",
-                "expected_output": "0"
+                "input": "{} | '' | 55",
+                "expected_output": "{}, Average score: 0.00"
             },
             {
-                "input": "-1",
-                "expected_output": "Invalid"
+                "input": "{'a':1, 'b':2, 'c': 3, 'd': 4, 'e': 5} | 'f' | 6",
+                "expected_output": "{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6}, Average score: 3.50"
             },
             {
-                "input": "10",
-                "expected_output": "Invalid"
+                "input": "{'subject1': 100} | 'subject1' | 0",
+                "expected_output": "{'subject1': 0}, Average score: 0.00"
+            },
+            {
+                "input": "{} | 'programming' | 100",
+                "expected_output": "{'programming': 100}, Average score: 100.00"
+            },
+            {
+                "input": "{'Math':95, 'Physics':92, 'Chemistry':88} | 'Biology' | 90",
+                "expected_output": "{'Math': 95, 'Physics': 92, 'Chemistry': 88, 'Biology': 90}, Average score: 91.25"
             }
         ]
     },
     {
-        "setname": "test1_2",
-        "describe": "สำหรับข้อ 2 จาก testcase อาจารย์",
+        "setname": "test5_lab2",
+        "describe": "item 5 lab 2",
         "testcase": [
             {
-                "input": "3",
-                "expected_output": "906609"
+                "input": "{'2548': {'albumTitle': 'Slippery When Wet'}} | 2548 | artist | Bon Jovi",
+                "expected_output": "{'2548': {'albumTitle': 'Slippery When Wet', 'artist': 'Bon Jovi'}}"
             },
             {
-                "input": "2",
-                "expected_output": "9009"
+                "input": "{'2548': {'albumTitle': 'Slippery When Wet', 'artist': 'Bon Jovi'}} | 2548 | tracks | Wanted Dead or Alive",
+                "expected_output": "{'2548': {'albumTitle': 'Slippery When Wet', 'artist': 'Bon Jovi', 'tracks': ['Wanted Dead or Alive']}}"
             },
             {
-                "input": "0",
+                "input": "{'2548': {'albumTitle': 'Slippery When Wet', 'artist': 'Bon Jovi', 'tracks': ['Let it Rock']}} | 2548 | tracks | You Give Love a Bad Name",
+                "expected_output": "{'2548': {'albumTitle': 'Slippery When Wet', 'artist': 'Bon Jovi', 'tracks': ['Let it Rock', 'You Give Love a Bad Name']}}"
+            },
+            {
+                "input": "{'2548': {'albumTitle': 'Slippery When Wet', 'artist': 'Bon Jovi'}} | 2548 | albumTitle | ''",
+                "expected_output": "{'2548': {'artist': 'Bon Jovi'}}"
+            },
+            {
+                "input": "{'2548': {'albumTitle': 'Slippery When Wet'}} | 2548 | artist | Bon Jovi",
+                "expected_output": "{'2548': {'albumTitle': 'Slippery When Wet', 'artist': 'Bon Jovi'}}"
+            },
+            {
+                "input": "{'2548': {'albumTitle': 'Slippery When Wet'}} | 2548 | tracks | Wanted Dead or Alive",
+                "expected_output": "{'2548': {'albumTitle': 'Slippery When Wet', 'tracks': ['Wanted Dead or Alive']}}"
+            },
+            {
+                "input": "{'2548': {'albumTitle': 'Slippery When Wet', 'tracks': ['Let it Rock']}} | 2548 | tracks | ''",
+                "expected_output": "{'2548': {'albumTitle': 'Slippery When Wet'}}"
+            },
+            {
+                "input": "{'2548': {}} | 2548 | tracks | Let it Rock",
+                "expected_output": "{'2548': {'tracks': ['Let it Rock']}}"
+            },
+            {
+                "input": "{'2548': {}} | 2548 | albumTitle | Slippery When Wet",
+                "expected_output": "{'2548': {'albumTitle': 'Slippery When Wet'}}"
+            },
+            {
+                "input": "{'2548': {'albumTitle': 'Slippery When Wet'}} | -1 | artist | Bon Jovi",
                 "expected_output": "Invalid"
             },
             {
-                "input": "1",
+                "input": "{'2548': {'albumTitle': 'Slippery When Wet'}} | 2548 | artist | ''",
                 "expected_output": "Invalid"
             },
             {
-                "input": "-3",
+                "input": "{'2548': {'albumTitle': 'Slippery When Wet'}} | 0 | artist | Bon Jovi",
                 "expected_output": "Invalid"
             },
             {
-                "input": "a",
-                "expected_output": "Invalid"
-            }
-        ]
-    },
-    {
-        "setname": "test1_3",
-        "describe": "สำหรับข้อ 3 จาก testcase อาจารย์",
-        "testcase": [
-            {
-                "input": "7 0 7 15",
-                "expected_output": "0"
-            },
-            {
-                "input": "7 0 8 0",
-                "expected_output": "10"
-            },
-            {
-                "input": "7 0 10 0",
-                "expected_output": "30"
-            },
-            {
-                "input": "7 0 12 0",
-                "expected_output": "70"
-            },
-            {
-                "input": "7 0 14 0",
-                "expected_output": "200"
-            },
-            {
-                "input": "10 30 13 15",
-                "expected_output": "30"
-            },
-            {
-                "input": "9 0 9 16",
-                "expected_output": "10"
-            },
-            {
-                "input": "15 0 19 0",
-                "expected_output": "50"
-            },
-            {
-                "input": "22 45 23 0",
-                "expected_output": "0"
-            },
-            {
-                "input": "7 30 23 0",
-                "expected_output": "200"
-            },
-            {
-                "input": "23 0 7 0",
+                "input": "{InvalidString} | 2548 | artist | Bon Jovi",
                 "expected_output": "Invalid"
             },
             {
-                "input": "7 0 24 0",
-                "expected_output": "Invalid"
-            },
-            {
-                "input": "-1 0 10 0",
-                "expected_output": "Invalid"
-            },
-            {
-                "input": "7 0 8 -15",
-                "expected_output": "Invalid"
-            },
-            {
-                "input": "7 60 8 0",
-                "expected_output": "Invalid"
-            }
-        ]
-    },
-    {
-        "setname": "test1_5",
-        "describe": "สำหรับข้อ 5 จาก testcase อาจารย์",
-        "testcase": [
-            {
-                "input": "9 4 6 2",
-                "expected_output": "2469"
-            },
-            {
-                "input": "3 0 8 1 3 3",
-                "expected_output": "103338"
-            },
-            {
-                "input": "0 0 1",
-                "expected_output": "100"
-            },
-            {
-                "input": "1 1",
-                "expected_output": "11"
-            },
-            {
-                "input": "9 8 7 6 5 4 3 2 1 0",
-                "expected_output": "1023456789"
-            },
-            {
-                "input": "9 8 7 6 5 4 3 2 1 0 1",
-                "expected_output": "Invalid"
-            },
-            {
-                "input": "1",
-                "expected_output": "Invalid"
-            },
-            {
-                "input": "a b c",
-                "expected_output": "Invalid"
-            },
-            {
-                "input": "-1 2 3",
-                "expected_output": "Invalid"
-            }
-        ]
-    },
-    {
-        "setname": "test1_6",
-        "describe": "สำหรับข้อ 6 จาก testcase อาจารย์",
-        "testcase": [
-            {
-                "input": "[1, 2, 3]",
-                "expected_output": "6"
-            },
-            {
-                "input": "[0, 1, 2]",
-                "expected_output": "2"
-            },
-            {
-                "input": "[-1, 1, -1]",
-                "expected_output": "1"
-            },
-            {
-                "input": "[100, -10, 1]",
-                "expected_output": "100"
-            },
-            {
-                "input": "[1, 2, 3, 4, 5]",
-                "expected_output": "20"
-            },
-            {
-                "input": "[-1, -2, -3, -4, -5]",
-                "expected_output": "20"
-            },
-            {
-                "input": "[0, 0, 0, 0]",
-                "expected_output": "Invalid"
-            },
-            {
-                "input": "[1]",
+                "input": "{'2548': {'albumTitle': 'Slippery When Wet'}} | 2548 | unknownProperty | Some Value",
                 "expected_output": "Invalid"
             }
         ]
